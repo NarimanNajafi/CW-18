@@ -7,7 +7,7 @@ import pic6 from "./img/6.jpg";
 function HeaderReactShoppingCart() {
   return (
     <div>
-      <h2 className=" container m-auto bg-slate-900 text-white h-10 ">
+      <h2 className="m-auto bg-slate-900 text-white h-10 flex justify-start items-center pl-5">
         React shoppin Cart
       </h2>
     </div>
@@ -16,18 +16,18 @@ function HeaderReactShoppingCart() {
 
 function Category() {
   return (
-    <div className=" flex m-3">
+    <div className=" flex m-3 justify-between p-5">
       <p>6 Product</p>
       <div className=" ml-60">
-        <label htmlFor="order">Order</label>
-        <select name="order" id="order">
+        <label className="mr-5" htmlFor="order">Order</label>
+        <select className="border" name="order" id="order">
           <option value="lowest">Lowest</option>
           <option value="highest">Highest</option>
         </select>
       </div>
       <div className=" ml-60">
-        <label htmlFor="filter">Filter</label>
-        <select name="size" id="size">
+        <label htmlFor="filter" className="mr-5">Filter</label>
+        <select className="border" name="size" id="size">
           <option value="all">All</option>
           <option value="xs">XS</option>
           <option value="s">S</option>
@@ -36,7 +36,9 @@ function Category() {
           <option value="xl">Xl</option>
           <option value="xxl">XXl</option>
         </select>
+
       </div>
+      <p>Cart is Empty</p>
     </div>
   );
 }
@@ -46,46 +48,6 @@ function Card() {
     <div>
       <div className="card ">
         <img src={pic1} alt="" />
-        <p>Frill mini dress in yellow polka dot</p>
-        <div>
-          <p>$10.9</p>
-          <button className=" bg-amber-400">Add to cart</button>
-        </div>
-      </div>
-      <div className="cart">
-        <img src={pic2} alt="" />
-        <p>Midi sundress with ruched front</p>
-        <div>
-          <p>$18.9</p>
-          <button className=" bg-amber-400">Add to cart</button>
-        </div>
-      </div>
-      <div className="cart">
-        <img src={pic3} alt="" />
-        <p>cami maxi dress in polka dot</p>
-        <div>
-          <p>$25.9</p>
-          <button className=" bg-amber-400">Add to cart</button>
-        </div>
-      </div>
-      <div className="cart">
-        <img src={pic4} alt="" />
-        <p>Midi sundress with shirring detail</p>
-        <div>
-          <p>$29.9</p>
-          <button className=" bg-amber-400">Add to cart</button>
-        </div>
-      </div>
-      <div className="cart">
-        <img src={pic5} alt="" />
-        <p>Midi tea dress in blue and red spot</p>
-        <div>
-          <p>$49.9</p>
-          <button className=" bg-amber-400">Add to cart</button>
-        </div>
-      </div>
-      <div className="cart">
-        <img src={pic6} alt="" />
         <p>Frill mini dress in yellow polka dot</p>
         <div>
           <p>$10.9</p>
@@ -106,11 +68,15 @@ function Cart() {
 
 function header() {
   return (
-    <div>
+    <div className="w-full">
       <HeaderReactShoppingCart />
       <Category />
+      <div className="flex justify-center items-center mb-5">
+        <hr className="bg-black w-full" />
+        <hr className="bg-black w-40 ml-5" />
+      </div>
       <Card />
-      <Cart />
+      
     </div>
   );
 }
